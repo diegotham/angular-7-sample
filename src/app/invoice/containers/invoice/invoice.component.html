@@ -1,0 +1,54 @@
+<div fxLayout="row wrap" class="list-box" fxLayoutAlign="center center">
+
+  <h1>Byrd Invoice</h1>
+
+  <div fxFlex="100" class="filter-box">
+    <div fxLayout="row wrap" fxLayoutAlign="center center">
+        <div fxFlex="50" fxFlex.xs="100">
+          <mat-form-field>
+            <mat-select placeholder="Customer" (selectionChange)="changeCustomer($event.value)">
+              <mat-option *ngFor="let customer of customers$ | async" [value]="customer.id">
+                {{customer.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxFlex.xs="100">
+          <mat-form-field class="full-width">
+              <input type="text" matInput type="text" ngxDaterangepickerMd
+              placeholder="Choose date"
+              (change)="changeDate($event)">
+            </mat-form-field>
+        </div>
+      </div>
+  </div>
+
+  <div fxFlex="100" class="stats" *ngIf="ordersFilter$ | async as ordersFilter">
+    <div fxFlexLayout="row wrap">
+      <div fxFlex="50" fxFlex="100">
+          <ng-container *ngIf="(totalOrders$ | async) as totalOrders">
+              <ng-container *ngIf="totalOrders > 0">
+                <div>Total orders: {{totalOrders}}</div>
+              </ng-container>
+            </ng-container>
+            <ng-container *ngIf="(totalOrdersAmount$ | async) as totalOrdersAmount">
+              <ng-container *ngIf="totalOrdersAmount > 0">
+                <div>Total amount: {{totalOrdersAmount}}</div>
+              </ng-container>
+            </ng-container>
+      </div>
+      <div fxFlex="50" fxFlex.xs="100">
+          <ng-container *ngIf="isDateRangeSelected$ | async">
+              Date: {{ordersFilter.startDate | date: 'mediumDate'}} - {{ordersFilter.endDate | date: 'mediumDate'}} <br>
+              Days Selected: {{daysRangeFilter$ | async}}
+          </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex="100" class="items">
+      <app-order-item 
+        *ngFor="let order of orders$ | async" [order]="order">
+      </app-order-item>
+    </div>
+</div>

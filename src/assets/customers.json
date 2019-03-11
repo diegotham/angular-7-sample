@@ -1,0 +1,17 @@
+[
+    {
+      "id": "cust-1",
+      "name": "E. Corp",
+      "email": "admin@ecorp.net"
+    },
+    {
+      "id": "cust-2",
+      "name": "Acme Inc.",
+      "email": "logistics@acme.com"
+    },
+    {
+      "id": "cust-3",
+      "name": "Berliner Bär",
+      "email": "hello@bbaer.com"
+    }
+  ]

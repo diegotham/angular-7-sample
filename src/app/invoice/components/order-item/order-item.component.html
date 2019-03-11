@@ -1,0 +1,28 @@
+<div fxLayout="row wrap" fxFlexAlign="center center">
+  <div fxFlex="60" fxFlex.xs="100">
+      <strong>Customer: </strong> {{ order.recipient.name }} - {{ order.recipient.email }} <br>
+      <strong>Date: </strong> {{order.created_at | date: 'mediumDate'}} <br>
+      <strong>Total price: </strong> <span class="price">{{totalPrice}}</span> <br>
+
+      <h3>Items</h3>
+      <div *ngFor="let item of order.items">
+        <div fxLayout="row wrap">
+          <div fxFlex="60">
+              [{{item.id}}] - {{item.name}}
+          </div>
+          <div fxFlex="40">
+              Qty: {{item.quantity}}
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <div fxFlex="40" fxFlex.fx="100">
+    <p>
+        <strong>Delivery details:</strong> <br>
+          Courier: {{order.delivery.courier}} <br>
+          Method: {{order.delivery.method}} <br>
+    </p>
+  </div>
+</div>
