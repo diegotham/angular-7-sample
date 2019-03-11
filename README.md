@@ -1,27 +1,12 @@
-# Byrd
+# Angular 7 sample with NgRx
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
+* Calls are not made to a real API but a json file
+* Tests not added
+* No state persistence on refresh
 
-## Development server
+Run 'ng s' and you'll see:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Screen1](https://github.com/diegotham/angular-7-sample/blob/master/screenshots/screen1.png)
+![Screen2](https://github.com/diegotham/angular-7-sample/blob/master/screenshots/screen2.png)
+![Screen3](https://github.com/diegotham/angular-7-sample/blob/master/screenshots/screen3.png)
+![Screen4](https://github.com/diegotham/angular-7-sample/blob/master/screenshots/screen4.png)
